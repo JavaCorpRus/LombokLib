@@ -7,8 +7,6 @@ See [LICENSE] for the Project Lombok license.
 
 Looking for professional support of Project Lombok? Lombok is now part of a [tidelift subscription]!
 
-For a list of all authors, see the [AUTHORS] file. 
-
 For complete project information, a short tutorial on what lombok does, and how to download / use / install it, see [projectlombok.org]
 
 [LICENSE]: https://github.com/JavaCorpRus/LombokLib/blob/main/LICENSE.txt
